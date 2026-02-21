@@ -1,0 +1,54 @@
+# =============================================================================
+# config/powervs.conf - PowerVS Environment Configuration
+#
+# Copy this file to config/powervs.conf and fill in your values.
+# NEVER commit this file to source control with real credentials.
+# Add config/powervs.conf to your .gitignore.
+# =============================================================================
+
+# --- IBM Cloud Credentials ---------------------------------------------------
+
+# Your IBM Cloud API key.
+# Create one at: https://cloud.ibm.com/iam/apikeys
+IBMCLOUD_API_KEY="YOUR_API_KEY_HERE"
+
+# --- PowerVS Workspace / Service Instance ------------------------------------
+
+# The Cloud Resource Name (CRN) of your PowerVS workspace.
+# Found in IBM Cloud Console > Resource List > PowerVS workspace > Details
+POWER_CRN="crn:v1:bluemix:public:power-iaas:us-east:a/ACCOUNT_ID:WORKSPACE_ID::"
+
+# The PowerVS Cloud Instance ID (GUID of the workspace).
+# This is the WORKSPACE_ID portion of the CRN above, also visible in the URL
+# when you open your workspace in the console.
+CLOUD_INSTANCE_ID="YOUR_WORKSPACE_GUID_HERE"
+
+# The PowerVS API regional endpoint.
+# Common values:
+#   us-east:     https://us-east.power-iaas.cloud.ibm.com
+#   us-south:    https://us-south.power-iaas.cloud.ibm.com
+#   eu-de:       https://eu-de.power-iaas.cloud.ibm.com
+#   eu-gb:       https://eu-gb.power-iaas.cloud.ibm.com
+#   au-syd:      https://au-syd.power-iaas.cloud.ibm.com
+#   jp-tok:      https://jp-tok.power-iaas.cloud.ibm.com
+POWER_API_ENDPOINT="https://us-east.power-iaas.cloud.ibm.com"
+
+# --- VM Instance -------------------------------------------------------------
+
+# The PVM Instance ID of the AIX or IBM i virtual machine you want to manage.
+# Found in IBM Cloud Console > PowerVS workspace > Virtual server instances > instance details
+PVM_INSTANCE_ID="YOUR_PVM_INSTANCE_ID_HERE"
+
+# --- Optional Settings -------------------------------------------------------
+
+# Directory for log files (default: /tmp)
+LOG_DIR="/tmp"
+
+# Maximum seconds to wait for async operations (snapshot, clone, export)
+MAX_WAIT_SECS=900
+
+# Poll interval in seconds when waiting for async operations
+POLL_INTERVAL_SECS=20
+
+# Mark config as loaded so libraries don't double-source it
+CONFIG_LOADED=1
